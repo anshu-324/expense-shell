@@ -1,5 +1,5 @@
-dnf module disable nodejs -y
-dnf module enable nodejs:18 -y
+curl -sl https://rpm.nodesource.com/setup_lts.x | bash
+
 dnf install nodejs -y
 
 cp backend.service /etc/systemd/system/backend.service
