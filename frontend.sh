@@ -10,10 +10,11 @@ rm -rf /usr/share/nginx/html/* >>/tmp/expense.log
 echo download frontend code
 curl -s -o /tmp/frontend.zip https://expense-artifacts.s3.amazonaws.com/frontend.zip >>/tmp/expense.log
 
-echo extracting frontend code
 cd /usr/share/nginx/html >>/tmp/expense.log
+
+echo extracting frontend code
 unzip /tmp/frontend.zip >>/tmp/expense.log
 
 echo starting nginx service
 systemctl enable nginx >>/tmp/expense.log
-systemctl start nginx >>/tmp/expense.log
+systemctl restart nginx >>/tmp/expense.log
