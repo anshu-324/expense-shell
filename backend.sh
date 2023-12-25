@@ -1,4 +1,5 @@
-log_file=/tmp/expense.log
+source common.sh
+
 echo install nodejs repos
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash >>$log_file
 
