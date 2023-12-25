@@ -1,4 +1,4 @@
-log_file = /tmp/expense.log
+log_file=/tmp/expense.log
 echo install nginx
 dnf install nginx -y >>$log_file
 
