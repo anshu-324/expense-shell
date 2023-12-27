@@ -18,9 +18,10 @@ echo $?
 
 echo clean app content
 rm -rf /app &>>$log_file
-mkdir /app &>>$log_file
-cd /app &>>$log_file
 echo $?
+
+mkdir /app
+cd /app
 
 download_and_extract
 echo $?
