@@ -15,7 +15,7 @@ cd /usr/share/nginx/html
 echo $?
 
 download_and_extract
-echo $?
+
 
 echo starting nginx service
 systemctl enable nginx &>>$log_file
