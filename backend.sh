@@ -1,4 +1,5 @@
 source common.sh
+component=backend
 echo install nodejs repo
 dnf module disable nodejs -y &>>$log_file
 dnf module enable nodejs:18 -y &>>$log_file
