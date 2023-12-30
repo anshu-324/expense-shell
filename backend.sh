@@ -7,11 +7,11 @@ echo install nodejs repo
 dnf module disable nodejs -y &>>$log_file
 dnf module enable nodejs:18 -y &>>$log_file
 stat_check
-fi
+
 echo install nodejs
 dnf install nodejs -y &>>$log_file
 stat_check
-
+fi
 echo copy backend service file
 cp backend.service /etc/systemd/system/backend.service &>>$log_file
 stat_check
