@@ -1,10 +1,13 @@
 source common.sh
 component=backend
+
+type npm &>>$log_file
+if [ $? -ne 0 ] ; then
 echo install nodejs repo
 dnf module disable nodejs -y &>>$log_file
 dnf module enable nodejs:18 -y &>>$log_file
 stat_check
-
+fi
 echo install nodejs
 dnf install nodejs -y &>>$log_file
 stat_check
@@ -15,9 +18,9 @@ stat_check
 
 echo add application user
 id expense &>>$log_file
-  if [ $? -ne 0 ]; then
+if [ $? -ne 0 ]; then
     useradd expense &>>$log_file
-  fi
+fi
 stat_check
 
 echo clean app content
