@@ -13,7 +13,9 @@ echo copy backend service file
 cp backend.service /etc/systemd/system/backend.service &>>$log_file
 stat_check
 echo add application user
-useradd expense &>>$log_file
+id expense &>>$log_file
+ if [$? -ne 0]; then
+    useradd expense &>>$log_file
 stat_check
 
 echo clean app content
