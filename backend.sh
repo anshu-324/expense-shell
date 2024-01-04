@@ -4,7 +4,7 @@ component=backend
 type npm &>>$log_file
 if [ $? -ne 0 ] ; then
 echo install nodejs repo
-curl -sL https://rpm.nodesource.com/setup_lts.x | bash
+curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>$log_file
 stat_check
 
 echo install nodejs
@@ -35,7 +35,7 @@ npm install &>>$log_file
 stat_check
 
 echo start backend service
-systemctl daemon-reload
+systemctl daemon-reload &>>$log_file
 
 systemctl enable backend
 systemctl start backend
