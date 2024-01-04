@@ -4,8 +4,7 @@ component=backend
 type npm &>>$log_file
 if [ $? -ne 0 ] ; then
 echo install nodejs repo
-dnf module disable nodejs -y &>>$log_file
-dnf module enable nodejs:18 -y &>>$log_file
+curl -sL https://rpm.nodesource.com/setup_lts.x | bash
 stat_check
 
 echo install nodejs
